@@ -1,0 +1,151 @@
+@font-face{
+    font-family: font1;
+    src: url(./assets/InstrumentSerif-Italic.ttf);
+}
+  body{
+    font-family: font1;
+    background: url(./assets/dawn-field-grass-164025.jpg) fixed center/cover;
+
+  }
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    color: rgb(99, 99, 223);
+    text-shadow: 5px 3px 2px rgb(22, 145, 145);
+    text-align: center;  
+}
+
+main{
+  font-family: "Playfair Display", serif;
+  background: whitesmoke;
+  width: 90%;
+  min-height: 500px;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 5px rgb(156, 245, 156);
+}
+
+.positioning,.flexbox, .grid {
+  border: 2px solid skyblue;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.positioning{
+  position: relative;
+}
+
+h2{
+  margin: 0;
+}
+
+#circle{
+  height: 50px;
+  width: 50px;
+  background: skyblue;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top : 0;
+  right: 0;
+
+}
+
+#rectangle {
+  height: 15px;
+  width: 100px;
+  background: slateblue;
+  padding: 20px;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ul{
+  display : flex ;
+  justify-content: space-around;
+  padding: 0;
+}
+
+li{
+  list-style-type: none ;
+  font-size: 0.7rem;
+  height: 160px;
+  width: 160px;
+  background: turquoise;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px;
+}
+
+.img{
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+            "i1 i2 "
+            "ta ta"
+            "bt bt";
+}
+#firstname{
+  grid-area: i1;
+}
+#surname{
+  grid-area: i2 ;
+}
+textarea{
+  grid-area: ta;
+  resize: none;
+}
+input[type="submit"]{
+  grid-area: bt;
+  cursor: pointer;
+  background: cyan;
+  transition: 0.4s;
+}
+
+input, textarea {
+  margin: 5px;
+  height: 45px;
+  border: 1px solid darkblue;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: font1;
+}
+input[type="submit"]:hover{
+  background: green;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .grid-container{
+    display: block;
+  } 
+}
+@media screen and (max-width: 780px) {
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+          "i1"
+          "i2"
+          "ta"
+          "bt";
+  }
+  
+}
